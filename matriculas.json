@@ -1,0 +1,9 @@
+[
+    {
+        "id": 1,
+        "idAluno": 1,
+        "idTurma": 1,
+        "dataMatricula": "2025-08-01 14:00",
+        "status": "Ativa"
+    }
+]

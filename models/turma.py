@@ -4,11 +4,15 @@ from datetime import datetime
 
 class Turma:
     def __init__(self, vagas, horario, IdEsporte, IdProfessor, id=0):
-        self.__set_id(id)
-        self.__set_id_esporte(IdEsporte)
-        self.__set_id_prof(IdProfessor)
-        self.__set_vagas(vagas)
-        self.__set_horario(horario)
+        self.set_id(id)
+        self.set_id_esporte(IdEsporte)
+        self.set_id_prof(IdProfessor)
+        self.set_vagas(vagas)
+        self.set_horario(horario)
+    def set_id(self, value):
+        if value < 0:
+            raise ValueError("ID não pode ser negativo")
+        self.__id = value
 
     def set_id_esporte(self, IdEsporte):
         if IdEsporte < 0:
@@ -51,10 +55,10 @@ class Turma:
             except ValueError:
                 raise ValueError("Formato de horário inválido. Use 'YYYY-MM-DD HH:MM'")
 
-def get_horario(self):
-    if self.__horario is None:
-        return None
-    return self.__horario.strftime("%Y-%m-%d %H:%M")
+    def get_horario(self):
+        if self.__horario is None:
+            return None
+        return self.__horario.strftime("%Y-%m-%d %H:%M")
 
 
 
@@ -63,13 +67,13 @@ def get_horario(self):
 
 
     def to_dict(self):
-        return{
-            "id": self.__id,
-            "id_esporte": self.__id_esporte,
-            "id_prof": self.__id_prof,
-            "vagas": self.__vagas,
-            "horario": self.__horario
-        }
+            return{
+                "id": self.__id,
+                "id_esporte": self.__id_esporte,
+                "id_prof": self.__id_prof,
+                "vagas": self.__vagas,
+                "horario": self.get_horario() 
+            }
 
 
 class Turmas:
@@ -81,12 +85,16 @@ class Turmas:
         cls.objetos = []
         try:
             with open("turmas.json", mode="r") as arquivo:
-                a = json.load(arquivo)
+                try:
+                    a = json.load(arquivo)
+                except json.JSONDecodeError:
+                    a = []  # se o JSON estiver vazio/corrompido, considera lista vazia
+
                 for dic in a:
                     turma = Turma(
                         id=dic["id"],
-                        id_esporte=dic["id_esporte"],
-                        id_prof=dic["id_prof"],
+                        IdEsporte=dic["id_esporte"],
+                        IdProfessor=dic["id_prof"],
                         vagas=dic["vagas"],
                         horario=dic["horario"]
                     )

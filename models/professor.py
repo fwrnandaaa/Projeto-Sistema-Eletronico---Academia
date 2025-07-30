@@ -3,10 +3,10 @@ import json
 
 class Professor:
     def __init__(self, nome, cpf, senha, id=0):
-        self.set__id(id)
-        self.set__nome(nome)
-        self.set__cpf(cpf)
-        self.set__senha(senha)
+        self.set_id(id)
+        self.set_nome(nome)
+        self.set_cpf(cpf)
+        self.set_senha(senha)
 
 
     def set_id(self, id):
@@ -31,8 +31,7 @@ class Professor:
 
 
     def set_cpf(self, cpf):
-        cpf = 00000000000
-        if len(cpf) != 11:
+        if len(str(cpf)) != 11:
             raise ValueError  ("CPF inválido!")
         else:
             self.__cpf = cpf
@@ -89,8 +88,10 @@ class Professores:
 
     @classmethod
     def salvar(cls):
-        cls.abrir()
-        return [str(professor) for professor in cls.objetos]
+        with open("professores.json", mode="w") as arquivo:
+            lista_dicts = [professor.to_dict() for professor in cls.objetos]
+            json.dump(lista_dicts, arquivo, indent=4)
+
 
 
     @classmethod
@@ -101,7 +102,7 @@ class Professores:
             p = max(cls.objetos, key=lambda c: c.get_id()).get_id()
         obj.set_id(p + 1)
         cls.objetos.append(obj)
-        cls.salvar
+        cls.salvar()
 
 
     @classmethod

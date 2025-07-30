@@ -1,15 +1,15 @@
 import json
 class Esporte:
     def __init__(self, id, nome):
-        self.__setId(id)
-        self.__setNome(nome)
+        self.setId(id)
+        self.setNome(nome)
 
     def getId(self):
         return self.__id
     def setId(self, value):
         if value < 0:
             raise ValueError("ID não pode ser negativo")
-        self.__id = id
+        self.__id = value
 
     def getNome(self):
         return self.__nome

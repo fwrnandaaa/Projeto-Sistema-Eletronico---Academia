@@ -44,7 +44,7 @@ class Matricula:
                 horario_datetime = datetime.strptime(dataMatricula, "%Y-%m-%d %H:%M")
                 self.__dataMatricula = horario_datetime
             except ValueError:
-                raise ValueError("Formato de horário inválido. Use 'YYYY-MM-DD HH:MM'")
+                pass
             
     def getStatus(self):
         return self.__status
@@ -58,7 +58,7 @@ class Matricula:
             "id": self.__id,
             "idAluno": self.__idAluno,
             "idTurma": self.__idTurma,
-            "dataMatricula": self.__dataMatricula.isoformat(),
+            "dataMatricula": self.__dataMatricula.strftime("%Y-%m-%d %H:%M"),
             "status": self.__status
         }
 
