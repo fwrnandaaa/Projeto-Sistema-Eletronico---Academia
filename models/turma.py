@@ -10,12 +10,12 @@ class Turma:
         self.__set_vagas(vagas)
         self.__set_horario(horario)
 
-    def __set_id_esporte(self, IdEsporte):
+    def set_id_esporte(self, IdEsporte):
         if IdEsporte < 0:
             raise ValueError("Id do esporte não pode ser negativo")
         self.__id_esporte = IdEsporte
 
-    def __set_id_prof(self, IdProfessor):
+    def set_id_prof(self, IdProfessor):
         if IdProfessor < 0:
             raise ValueError("ID do professor não poden ser negativo")
         self.__id_prof = IdProfessor
