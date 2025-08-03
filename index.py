@@ -2,6 +2,8 @@ import streamlit as st
 from views import View
 from templates.loginUI import LoginUI
 from templates.cadastrarAlunoUI import CadastrarAlunoUI
+from templates.cadastrarAulaUI import CadastrarAulaUI
+from templates.cadastrarProfessorUI import CadastrarProfessorUI
 
 class IndexUI:
     @staticmethod
@@ -15,8 +17,8 @@ class IndexUI:
         op = st.sidebar.selectbox("Menu", ["Matricular-se em aula", "Cancelar matrícula", "Visualizar histórico", "Excluir conta", "Sair"])
         if op == "Sair":
             for key in list(st.session_state.keys()):
-                del st.session_state[key]  # Limpa a sessão
-            st.rerun()  # Volta para o menu visitante
+                del st.session_state[key]  
+            st.rerun() 
 
     @staticmethod
     def menu_admin():
@@ -35,6 +37,10 @@ class IndexUI:
         ])
         if op == "Cadastrar aluno":
             CadastrarAlunoUI.main()
+        if op == "Cadastrar aula":
+            CadastrarAulaUI.main()
+        if op == "Cadastrar professor":
+            CadastrarProfessorUI.main()
         if op == "Sair":
             for key in list(st.session_state.keys()):
                 del st.session_state[key]  

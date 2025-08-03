@@ -4,5 +4,11 @@
         "nome": "Maria Oliveira",
         "cpf": "09876543210",
         "senha": "senha456"
+    },
+    {
+        "id": 2,
+        "nome": "Marcelo Silva",
+        "cpf": "74125896332",
+        "senha": "marceloprofessor"
     }
 ]
