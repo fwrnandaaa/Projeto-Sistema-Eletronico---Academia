@@ -1,6 +1,7 @@
 import streamlit as st
 from views import View
 from templates.loginUI import LoginUI
+from templates.cadastrarAlunoUI import CadastrarAlunoUI
 
 class IndexUI:
     @staticmethod
@@ -32,11 +33,12 @@ class IndexUI:
             "Visualizar histórico de aulas",
             "Sair"
         ])
+        if op == "Cadastrar aluno":
+            CadastrarAlunoUI.main()
         if op == "Sair":
             for key in list(st.session_state.keys()):
-                del st.session_state[key]  # Limpa a sessão
-            st.rerun()  # Volta para o menu visitante
-
+                del st.session_state[key]  
+            st.rerun()  
     @staticmethod
     def main():
         if "tipo_usuario" not in st.session_state:

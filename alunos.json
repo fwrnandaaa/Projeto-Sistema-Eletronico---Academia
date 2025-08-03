@@ -10,5 +10,11 @@
         "nome": "admin",
         "cpf": "12345678912",
         "senha": "admin"
+    },
+    {
+        "id": 3,
+        "nome": "Joana",
+        "cpf": "14253678451",
+        "senha": "joana"
     }
 ]
