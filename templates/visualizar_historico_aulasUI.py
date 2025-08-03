@@ -7,6 +7,7 @@ class HistoricoAulasUI:
     def main():
         st.header("Histórico de Aulas")
 
+
         if "professor_id" not in st.session_state:
             st.error("Você precisa estar logado como professor")
             return
@@ -27,13 +28,12 @@ class HistoricoAulasUI:
             st.info("Nenhuma aula encontrada no período selecionado")
             return
 
-
         aulas_filtradas = []
         for aula in aulas:
             data_aula = datetime.strptime(aula.get_horario(), "%Y-%m-%d %H:%M").date()
             if data_inicio <= data_aula <= data_fim:
                 aulas_filtradas.append(aula)
-        
+
         aulas_filtradas.sort(key=lambda x: datetime.strptime(x.get_horario(), "%Y-%m-%d %H:%M"), reverse=True)
 
 
@@ -48,15 +48,11 @@ class HistoricoAulasUI:
                     st.write(f"**Professor:** {professor.get_nome()}")
                     st.write(f"**Horário:** {aula.get_horario()}")
                 
-        
+
                 matriculas = View.listar_matriculas()
                 alunos_matriculados = [m for m in matriculas if m.getIdTurma() == aula.get_id()]
-                
                 if alunos_matriculados:
                     st.write("**Alunos matriculados:**")
                     for matricula in alunos_matriculados:
-                        try:
-                            aluno = next(a for a in View.listar_alunos() if a.get_id() == matricula.getIdAluno())
-                            st.write(f"- {aluno.get_nome()} (Matrícula: {matricula.getDataMatricula().strftime('%d/%m/%Y')})")
-                        except StopIteration:
-                            st.write(f"- Aluno ID: {matricula.getIdAluno()} (não encontrado)")
+                        aluno = View.listar_alunos()[matricula.get_id_aluno()-1]
+                        st.write(f"- {aluno.get_nome()}")

@@ -8,6 +8,8 @@ from templates.manter_esporteUI import ManterEsporteUI
 from templates.historicoAulasUI import HistoricoAulasUI
 from templates.solicitar_cadastro_aulaUI import SolicitarAulaUI
 from templates.gerenciarsugestoesUI import GerenciarSolicitacoesUI
+from templates.visualizar_historico_aulasUI import HistoricoAulasUI
+from templates.visualizar_sugestao_aulaUI import VisualizarSugestaoAulaUI
 
 
 class IndexUI:
@@ -18,9 +20,13 @@ class IndexUI:
             LoginUI.main()
     @staticmethod
     def menu_professor():
-        op = st.sidebar.selectbox("Menu",["Solicitar cadastro de aula", "Visualizar histórico de aulas", "Visualizar sugestão de aula", "Sair"])
+        op = st.sidebar.selectbox("Menu",["Solicitar cadastro de aula", "Visualizar histórico de aulas", "Visualizar sugestões de aula", "Sair"])
+        if op == "Visualizar histórico de aulas":
+           HistoricoAulasUI.main()
         if op == "Solicitar cadastro de aula":
            SolicitarAulaUI.main()
+        if op == "Visualizar sugestões de aula": 
+            VisualizarSugestaoAulaUI.main() 
         if op == "Sair":
             for key in list(st.session_state.keys()):
                 del st.session_state[key]  

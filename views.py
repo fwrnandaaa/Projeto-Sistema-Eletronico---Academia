@@ -70,7 +70,7 @@ class View:
         return Esportes.listar_obj()
     @staticmethod
     def esporte_inserir(nome):
-        e = Esporte(0, nome)  # O ID será gerado automaticamente
+        e = Esporte(0, nome)  
         Esportes.inserir(e)
 
     @staticmethod
@@ -80,6 +80,10 @@ class View:
             Esportes.excluir(esporte)
 
     #professores
+    @staticmethod
+    def listar_aulas_por_professor(id_professor):
+        turmas = Turmas.listar_obj()
+        return [turma for turma in turmas if turma.get_id_prof() == id_professor]
     @staticmethod
     def listar_professores():
         return Professores.listar_obj()
@@ -109,11 +113,16 @@ class View:
         p = Professor("teste", "14523678965", "teste", id)  # Cria objeto temporário apenas com o ID
         Professores.excluir(p)
 
+    @staticmethod
+    def listar_solicitacoes_por_professor(id_professor):
+        solicitacoes = SolicitacoesAula.listar_obj()
+        return [s for s in solicitacoes if s.get_id_professor() == id_professor]
+
 
     @staticmethod
     def solicitar_aula(motivo, id_esporte, data, hora, vagas, id_professor):
             try:
-                # Formatação consistente com Turma
+
                 data_str = data.strftime("%Y-%m-%d") if hasattr(data, 'strftime') else data
                 hora_str = hora.strftime("%H:%M") if hasattr(hora, 'strftime') else hora
                 data_hora = f"{data_str} {hora_str}"
@@ -140,10 +149,10 @@ class View:
         for s in solicitacoes:
             if s.get_id() == id_solicitacao:
                 try:
-                    # Já está no formato correto
+            
                     View.aula_inserir(
                         vagas=s.get_vagas(),
-                        horario=s.get_data_hora(),  # Já está no formato "YYYY-MM-DD HH:MM"
+                        horario=s.get_data_hora(), 
                         id_esporte=s.get_id_esporte(),
                         id_professor=s.get_id_professor()
                     )
