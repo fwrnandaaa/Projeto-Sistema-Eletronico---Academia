@@ -4,4 +4,11 @@
         "nome": "Jo\u00e3o Silva",
         "cpf": "12345678901",
         "senha": "senha123"
-    }]
+    },
+    {
+        "id": 2,
+        "nome": "admin",
+        "cpf": "12345678912",
+        "senha": "admin"
+    }
+]
