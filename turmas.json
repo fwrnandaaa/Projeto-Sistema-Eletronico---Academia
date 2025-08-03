@@ -12,5 +12,19 @@
         "id_prof": 1,
         "vagas": 31,
         "horario": "2025-08-04 15:12"
+    },
+    {
+        "id": 3,
+        "id_esporte": 2,
+        "id_prof": 2,
+        "vagas": 10,
+        "horario": "2025-08-12 08:30"
+    },
+    {
+        "id": 4,
+        "id_esporte": 1,
+        "id_prof": 2,
+        "vagas": 10,
+        "horario": "2025-08-03 14:00"
     }
 ]
