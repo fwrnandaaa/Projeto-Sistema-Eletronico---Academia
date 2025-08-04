@@ -27,10 +27,10 @@ class HistoricoAulasADMINUI:
                 "Professor": professores.get(aula.get_id_prof(), "Desconhecido"),
                 "Vagas": f"{alunos_matriculados}/{aula.get_vagas()}",
                 "Horário": aula.get_horario(),
-                "Status": "Ativa" if datetime.strptime(aula.get_horario(), "%Y-%m-%d %H:%M") > datetime.now() else "Encerrada"
+                "Status": "Ativa" if datetime.strptime(aula.get_horario(), "%d-%m-%Y %H:%M") > datetime.now() else "Encerrada"
             })
 
-        dados.sort(key=lambda x: datetime.strptime(x["Horário"], "%Y-%m-%d %H:%M"), reverse=True)
+        dados.sort(key=lambda x: datetime.strptime(x["Horário"], "%d-%m-%Y %H:%M"), reverse=True)
 
         col1, col2, col3 = st.columns(3)
         with col1:
@@ -48,7 +48,6 @@ class HistoricoAulasADMINUI:
             status_filter = "Ativa" if filtro_status == "Ativa" else "Encerrada"
             dados = [d for d in dados if d["Status"] == status_filter]
 
-        # Exibir tabela
         df = pd.DataFrame(dados)
         
         st.dataframe(

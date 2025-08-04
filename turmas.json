@@ -19,5 +19,33 @@
         "id_prof": 3,
         "vagas": 10,
         "horario": "11-08-2025 14:00"
+    },
+    {
+        "id": 4,
+        "id_esporte": 1,
+        "id_prof": 1,
+        "vagas": 10,
+        "horario": "21-08-2025 20:15"
+    },
+    {
+        "id": 5,
+        "id_esporte": 4,
+        "id_prof": 2,
+        "vagas": 16,
+        "horario": "03-07-2025 00:00"
+    },
+    {
+        "id": 6,
+        "id_esporte": 1,
+        "id_prof": 2,
+        "vagas": 15,
+        "horario": "04-08-2025 14:00"
+    },
+    {
+        "id": 7,
+        "id_esporte": 3,
+        "id_prof": 2,
+        "vagas": 14,
+        "horario": "12-08-2025 14:15"
     }
 ]

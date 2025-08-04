@@ -30,7 +30,7 @@ class HistoricoAulasUI:
 
         aulas_filtradas = []
         for aula in aulas:
-            data_aula = datetime.strptime(aula.get_horario(), "%Y-%m-%d %H:%M").date()
+            data_aula = datetime.strptime(aula.get_horario(), "%d-%m-%Y %H:%M").date()
             if data_inicio <= data_aula <= data_fim:
                 aulas_filtradas.append(aula)
 

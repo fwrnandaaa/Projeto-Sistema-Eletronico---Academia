@@ -7,5 +7,23 @@
         "vagas": 10,
         "id_professor": 2,
         "status": "aprovada"
+    },
+    {
+        "id": 2,
+        "motivo": "testeeee",
+        "id_esporte": 1,
+        "data_hora": "2025-08-04 14:00",
+        "vagas": 15,
+        "id_professor": 2,
+        "status": "aprovada"
+    },
+    {
+        "id": 3,
+        "motivo": "Demanda dos alunos",
+        "id_esporte": 1,
+        "data_hora": "2025-08-04 15:30",
+        "vagas": 16,
+        "id_professor": 2,
+        "status": "rejeitada"
     }
 ]

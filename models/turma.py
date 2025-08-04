@@ -48,13 +48,16 @@ class Turma:
     def set_horario(self, horario):
         if horario == "":
             raise ValueError("Horário não pode ser vazio")
-        else:
-            try:
-                
-                horario_datetime = datetime.strptime(horario, "%d-%m-%Y %H:%M")
-                self.__horario = horario_datetime
-            except ValueError:
-                raise ValueError("Formato de horário inválido. Use 'DD-MM-YYYY HH:MM'")
+        try:
+            if isinstance(horario, str):
+                self.__horario = datetime.strptime(horario, "%d-%m-%Y %H:%M")
+            elif isinstance(horario, datetime):
+                self.__horario = horario
+            else:
+                raise ValueError("Tipo inválido para horário")
+        except ValueError:
+            raise ValueError("Formato de horário inválido. Use 'DD-MM-YYYY HH:MM'")
+
 
     def get_horario(self):
         if self.__horario is None:

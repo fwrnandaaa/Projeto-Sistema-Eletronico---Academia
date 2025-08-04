@@ -33,7 +33,7 @@ class VisualizarSugestaoAulaUI:
 
         reverse_order = (ordenar_por == "Data mais recente")
         sugestoes.sort(
-            key=lambda x: datetime.strptime(x.get_data_hora(), "%d-%m-%Y %H:%M"), 
+            key=lambda x: datetime.strptime(x.get_data_hora(), "%Y-%m-%d %H:%M"),  # Alterado para Y-m-d
             reverse=reverse_order
         )
 
@@ -50,7 +50,7 @@ class VisualizarSugestaoAulaUI:
                     st.write(f"Vagas sugeridas: {sugestao.get_vagas()}")
                     st.write(f"Status: {sugestao.get_status().capitalize()}")
                 
-                st.write(f"otivo:")
+                st.write(f"Motivo:")
                 st.text(sugestao.get_motivo())
                 
                 if sugestao.get_status().lower() != "pendente":

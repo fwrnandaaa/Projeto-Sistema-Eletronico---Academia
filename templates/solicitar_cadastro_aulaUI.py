@@ -47,8 +47,8 @@ class SolicitarAulaUI:
             
             if st.form_submit_button("Enviar Solicitação"):
                 try:
-                    # Formata a data e hora separadamente
-                    data_str = data.strftime("%d-%m-%Y")
+                    data_str = data.strftime("%Y-%m-%d")
+
                     hora_str = hora.strftime("%H:%M")
                     
                     View.solicitar_aula(
