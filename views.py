@@ -123,7 +123,7 @@ class View:
     def solicitar_aula(motivo, id_esporte, data, hora, vagas, id_professor):
             try:
 
-                data_str = data.strftime("%Y-%m-%d") if hasattr(data, 'strftime') else data
+                data_str = data.strftime("%d-%m-%Y") if hasattr(data, 'strftime') else data
                 hora_str = hora.strftime("%H:%M") if hasattr(hora, 'strftime') else hora
                 data_hora = f"{data_str} {hora_str}"
                 

@@ -10,6 +10,11 @@ from templates.solicitar_cadastro_aulaUI import SolicitarAulaUI
 from templates.gerenciarsugestoesUI import GerenciarSolicitacoesUI
 from templates.visualizar_historico_aulasUI import HistoricoAulasUI
 from templates.visualizar_sugestao_aulaUI import VisualizarSugestaoAulaUI
+from templates.alunoMatriculaAulaUI import AlunoMatriculaAulaUI
+from templates.vizualizar_historico_alunoUI import HistoricoAulasAlunoUI
+from templates.cancelar_matricula_aula_alunoUI import CancelarMatriculaAulaUI
+from templates.excluir_conta_alunoUI import ExcluirContaAlunoUI
+from templates.homeUI import HomeUI
 
 
 class IndexUI:
@@ -20,7 +25,9 @@ class IndexUI:
             LoginUI.main()
     @staticmethod
     def menu_professor():
-        op = st.sidebar.selectbox("Menu",["Solicitar cadastro de aula", "Visualizar histórico de aulas", "Visualizar sugestões de aula", "Sair"])
+        op = st.sidebar.selectbox("Menu",["Home", "Solicitar cadastro de aula", "Visualizar histórico de aulas", "Visualizar sugestões de aula", "Sair"])
+        if op == "Home":
+            HomeUI.main()
         if op == "Visualizar histórico de aulas":
            HistoricoAulasUI.main()
         if op == "Solicitar cadastro de aula":
@@ -33,7 +40,17 @@ class IndexUI:
             st.rerun() 
     @staticmethod
     def menu_aluno():
-        op = st.sidebar.selectbox("Menu", ["Matricular-se em aula", "Cancelar matrícula", "Visualizar histórico", "Excluir conta", "Sair"])
+        op = st.sidebar.selectbox("Menu", ["Home", "Matricular-se em aula", "Cancelar matrícula", "Visualizar histórico", "Excluir conta", "Sair"])
+        if op == "Home":
+            HomeUI.main()
+        if op == "Matricular-se em aula":
+            AlunoMatriculaAulaUI.main()
+        if op == "Cancelar matrícula":
+            CancelarMatriculaAulaUI.main()
+        if op == "Visualizar histórico":
+            HistoricoAulasAlunoUI.main()
+        if op == "Excluir conta":
+            ExcluirContaAlunoUI.main()
         if op == "Sair":
             for key in list(st.session_state.keys()):
                 del st.session_state[key]  
@@ -66,6 +83,7 @@ class IndexUI:
             for key in list(st.session_state.keys()):
                 del st.session_state[key]  
             st.rerun()  
+            
     @staticmethod
     def main():
         if "tipo_usuario" not in st.session_state:

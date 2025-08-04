@@ -3,7 +3,175 @@
         "id": 1,
         "idAluno": 1,
         "idTurma": 1,
-        "dataMatricula": "2025-08-01 14:00",
+        "dataMatricula": "04-08-2024 14:00",
+        "status": "Cancelada"
+    },
+    {
+        "id": 2,
+        "idAluno": 1,
+        "idTurma": 2,
+        "dataMatricula": "04-08-2025 01:21",
+        "status": "Cancelada"
+    },
+    {
+        "id": 3,
+        "idAluno": 1,
+        "idTurma": 3,
+        "dataMatricula": "04-08-2025 01:21",
+        "status": "Cancelada"
+    },
+    {
+        "id": 4,
+        "idAluno": 1,
+        "idTurma": 3,
+        "dataMatricula": "04-08-2025 01:54",
+        "status": "Cancelada"
+    },
+    {
+        "id": 5,
+        "idAluno": 1,
+        "idTurma": 3,
+        "dataMatricula": "04-08-2025 01:57",
+        "status": "Cancelada"
+    },
+    {
+        "id": 6,
+        "idAluno": 1,
+        "idTurma": 3,
+        "dataMatricula": "04-08-2025 05:38",
+        "status": "Cancelada"
+    },
+    {
+        "id": 7,
+        "idAluno": 1,
+        "idTurma": 1,
+        "dataMatricula": "04-08-2025 05:39",
+        "status": "Cancelada"
+    },
+    {
+        "id": 8,
+        "idAluno": 1,
+        "idTurma": 2,
+        "dataMatricula": "04-08-2025 05:39",
+        "status": "Cancelada"
+    },
+    {
+        "id": 9,
+        "idAluno": 1,
+        "idTurma": 3,
+        "dataMatricula": "04-08-2025 05:39",
+        "status": "Cancelada"
+    },
+    {
+        "id": 10,
+        "idAluno": 1,
+        "idTurma": 1,
+        "dataMatricula": "04-08-2025 05:43",
+        "status": "Cancelada"
+    },
+    {
+        "id": 11,
+        "idAluno": 1,
+        "idTurma": 3,
+        "dataMatricula": "04-08-2025 05:45",
+        "status": "Cancelada"
+    },
+    {
+        "id": 12,
+        "idAluno": 1,
+        "idTurma": 2,
+        "dataMatricula": "04-08-2025 05:46",
+        "status": "Cancelada"
+    },
+    {
+        "id": 13,
+        "idAluno": 1,
+        "idTurma": 1,
+        "dataMatricula": "04-08-2025 05:49",
+        "status": "Cancelada"
+    },
+    {
+        "id": 14,
+        "idAluno": 1,
+        "idTurma": 1,
+        "dataMatricula": "04-08-2025 05:49",
+        "status": "Cancelada"
+    },
+    {
+        "id": 15,
+        "idAluno": 1,
+        "idTurma": 1,
+        "dataMatricula": "04-08-2025 05:51",
+        "status": "Cancelada"
+    },
+    {
+        "id": 16,
+        "idAluno": 1,
+        "idTurma": 1,
+        "dataMatricula": "04-08-2025 05:54",
+        "status": "Cancelada"
+    },
+    {
+        "id": 17,
+        "idAluno": 4,
+        "idTurma": 1,
+        "dataMatricula": "04-08-2025 06:17",
+        "status": "Cancelada"
+    },
+    {
+        "id": 18,
+        "idAluno": 4,
+        "idTurma": 1,
+        "dataMatricula": "04-08-2025 06:21",
+        "status": "Cancelada"
+    },
+    {
+        "id": 19,
+        "idAluno": 3,
+        "idTurma": 1,
+        "dataMatricula": "04-08-2025 06:27",
+        "status": "Cancelada"
+    },
+    {
+        "id": 20,
+        "idAluno": 3,
+        "idTurma": 2,
+        "dataMatricula": "04-08-2025 06:27",
+        "status": "Ativa"
+    },
+    {
+        "id": 21,
+        "idAluno": 4,
+        "idTurma": 1,
+        "dataMatricula": "04-08-2025 06:31",
+        "status": "Cancelada"
+    },
+    {
+        "id": 22,
+        "idAluno": 4,
+        "idTurma": 1,
+        "dataMatricula": "04-08-2025 06:32",
+        "status": "Cancelada"
+    },
+    {
+        "id": 23,
+        "idAluno": 4,
+        "idTurma": 1,
+        "dataMatricula": "04-08-2025 06:38",
+        "status": "Cancelada"
+    },
+    {
+        "id": 24,
+        "idAluno": 4,
+        "idTurma": 1,
+        "dataMatricula": "04-08-2025 06:38",
+        "status": "Cancelada"
+    },
+    {
+        "id": 25,
+        "idAluno": 4,
+        "idTurma": 2,
+        "dataMatricula": "04-08-2025 06:43",
         "status": "Ativa"
     }
 ]

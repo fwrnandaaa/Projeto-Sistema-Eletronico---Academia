@@ -36,16 +36,20 @@ class Matricula:
         return self.__dataMatricula
 
     def __setDataMatricula(self, dataMatricula):
-        if dataMatricula == "":
-            raise ValueError("Horário não pode ser vazio")
-        else:
+        if isinstance(dataMatricula, datetime):
+            self.__dataMatricula = dataMatricula
+        elif isinstance(dataMatricula, str):
+            if dataMatricula == "":
+                raise ValueError("Horário não pode ser vazio")
             try:
-                
-                horario_datetime = datetime.strptime(dataMatricula, "%Y-%m-%d %H:%M")
+                horario_datetime = datetime.strptime(dataMatricula, "%d-%m-%Y %H:%M")
                 self.__dataMatricula = horario_datetime
-            except ValueError:
-                pass
-            
+            except ValueError as e:
+                raise ValueError(f"Formato de data inválido: {e}")
+        else:
+            raise TypeError("dataMatricula deve ser str ou datetime")
+
+      
     def getStatus(self):
         return self.__status
 
@@ -58,7 +62,7 @@ class Matricula:
             "id": self.__id,
             "idAluno": self.__idAluno,
             "idTurma": self.__idTurma,
-            "dataMatricula": self.__dataMatricula.strftime("%Y-%m-%d %H:%M"),
+            "dataMatricula": self.__dataMatricula.strftime("%d-%m-%Y %H:%M"),
             "status": self.__status
         }
 

@@ -4,27 +4,20 @@
         "id_esporte": 1,
         "id_prof": 1,
         "vagas": 30,
-        "horario": "2025-08-01 14:00"
+        "horario": "10-08-2025 14:00"
     },
     {
         "id": 2,
-        "id_esporte": 1,
-        "id_prof": 1,
-        "vagas": 31,
-        "horario": "2025-08-04 15:12"
-    },
-    {
-        "id": 3,
         "id_esporte": 2,
         "id_prof": 2,
         "vagas": 10,
-        "horario": "2025-08-12 08:30"
+        "horario": "12-08-2024 08:30"
     },
     {
-        "id": 4,
-        "id_esporte": 1,
-        "id_prof": 2,
+        "id":3,
+        "id_esporte": 3,
+        "id_prof": 3,
         "vagas": 10,
-        "horario": "2025-08-03 14:00"
+        "horario": "11-08-2025 14:00"
     }
 ]

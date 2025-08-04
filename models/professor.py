@@ -8,7 +8,6 @@ class Professor:
         self.set_cpf(cpf)
         self.set_senha(senha)
 
-
     def set_id(self, id):
         id = int(id)
         if id < 0:
@@ -19,7 +18,6 @@ class Professor:
     def get_id(self):
         return self.__id
 
-
     def set_nome(self, nome):
         if nome == "":
             raise ValueError("Nome não pode ser vazio!")
@@ -29,28 +27,23 @@ class Professor:
     def get_nome(self):
         return self.__nome
 
-
     def set_cpf(self, cpf):
         if len(str(cpf)) != 11:
-            raise ValueError  ("CPF inválido!")
+            raise ValueError("CPF inválido!")
         else:
             self.__cpf = cpf
-
 
     def get_cpf(self):
         return self.__cpf
 
-
     def set_senha(self, senha):
         if senha == "":
-            raise ValueError("Senha não pode ser vazio!")
+            raise ValueError("Senha não pode ser vazia!")
         else:
             self.__senha = senha
 
-
     def get_senha(self):
         return self.__senha
-
 
     def __str__(self):
         return f"ID: {self.__id} \n Nome: {self.__nome} \n CPF: {self.__cpf} \n Senha: {self.__senha}"
@@ -67,14 +60,13 @@ class Professor:
 class Professores:
     objetos = []
 
-
     @classmethod
     def abrir(cls):
         cls.objetos = []
         try:
             with open("professores.json", mode="r") as arquivo:
-                a = json.load(arquivo)
-                for dic in a:
+                dados = json.load(arquivo)
+                for dic in dados:
                     professor = Professor(
                         id=dic["id"],
                         nome=dic["nome"],
@@ -85,14 +77,11 @@ class Professores:
         except FileNotFoundError:
             pass
 
-
     @classmethod
     def salvar(cls):
         with open("professores.json", mode="w") as arquivo:
             lista_dicts = [professor.to_dict() for professor in cls.objetos]
             json.dump(lista_dicts, arquivo, indent=4)
-
-
 
     @classmethod
     def inserir(cls, obj):
@@ -104,18 +93,15 @@ class Professores:
         cls.objetos.append(obj)
         cls.salvar()
 
-
     @classmethod
     def listar(cls):
-        cls.abri
+        cls.abrir()
         return [str(professor) for professor in cls.objetos]
-
 
     @classmethod
     def listar_obj(cls):
         cls.abrir()
         return cls.objetos
-
 
     @classmethod
     def listar_id(cls, id):
@@ -138,12 +124,14 @@ class Professores:
                     return True
                 except ValueError as e:
                     raise ValueError(f"Dados inválidos: {e}")
-
+        return False
 
     @classmethod
     def excluir(cls, obj):
+        cls.abrir()
         x = cls.listar_id(obj.get_id())
-        if x != None:
+        if x is not None:
             cls.objetos.remove(x)
             cls.salvar()
-
+            return True
+        return False

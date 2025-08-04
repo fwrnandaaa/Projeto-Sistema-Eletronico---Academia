@@ -10,5 +10,11 @@
         "nome": "Ana Alice",
         "cpf": "74125896321",
         "senha": "ana14"
+    }, 
+    {
+        "id": 3,
+        "nome": "Flavio Jose",
+        "cpf": "00012345678",
+        "senha": "fla123"
     }
 ]

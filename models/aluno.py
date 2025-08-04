@@ -135,10 +135,10 @@ class Alunos:
     @classmethod
     def excluir(cls, obj):
         cls.abrir()
-        x = cls.listar_id(obj.get_id())
-        if x is not None:
-            cls.objetos.remove(x)
-            cls.salvar()
+        cls.objetos = [aluno for aluno in cls.objetos if aluno.get_id() != obj.get_id()]
+        cls.salvar()
+        return True
+
 
 
 

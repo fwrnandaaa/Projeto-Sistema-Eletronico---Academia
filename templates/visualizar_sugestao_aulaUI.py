@@ -33,7 +33,7 @@ class VisualizarSugestaoAulaUI:
 
         reverse_order = (ordenar_por == "Data mais recente")
         sugestoes.sort(
-            key=lambda x: datetime.strptime(x.get_data_hora(), "%Y-%m-%d %H:%M"), 
+            key=lambda x: datetime.strptime(x.get_data_hora(), "%d-%m-%Y %H:%M"), 
             reverse=reverse_order
         )
 

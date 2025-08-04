@@ -9,6 +9,7 @@ class Turma:
         self.set_id_prof(IdProfessor)
         self.set_vagas(vagas)
         self.set_horario(horario)
+        
     def set_id(self, value):
         if value < 0:
             raise ValueError("ID não pode ser negativo")
@@ -50,15 +51,15 @@ class Turma:
         else:
             try:
                 
-                horario_datetime = datetime.strptime(horario, "%Y-%m-%d %H:%M")
+                horario_datetime = datetime.strptime(horario, "%d-%m-%Y %H:%M")
                 self.__horario = horario_datetime
             except ValueError:
-                raise ValueError("Formato de horário inválido. Use 'YYYY-MM-DD HH:MM'")
+                raise ValueError("Formato de horário inválido. Use 'DD-MM-YYYY HH:MM'")
 
     def get_horario(self):
         if self.__horario is None:
             return None
-        return self.__horario.strftime("%Y-%m-%d %H:%M")
+        return self.__horario.strftime("%d-%m-%Y %H:%M")
 
 
 
@@ -160,7 +161,7 @@ class Turmas:
         x = cls.listar_id(obj.get_id())
         if x != None:
             cls.objetos.remove(x)
-            cls.salvar
+            cls.salvar()
 
 
 

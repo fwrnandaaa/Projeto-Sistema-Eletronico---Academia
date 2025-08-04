@@ -34,7 +34,7 @@ class HistoricoAulasUI:
             if data_inicio <= data_aula <= data_fim:
                 aulas_filtradas.append(aula)
 
-        aulas_filtradas.sort(key=lambda x: datetime.strptime(x.get_horario(), "%Y-%m-%d %H:%M"), reverse=True)
+        aulas_filtradas.sort(key=lambda x: datetime.strptime(x.get_horario(), "%d-%m-%Y %H:%M"), reverse=True)
 
 
         for aula in aulas_filtradas:
