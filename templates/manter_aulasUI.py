@@ -38,20 +38,20 @@ class ManterAulaUI:
 
         # Demais campos
         vagas = st.number_input("Vagas disponíveis", min_value=1, max_value=50, value=10)
-        horario = st.text_input("Horário (YYYY-MM-DD HH:MM)")
+        horario = st.text_input("Horário (DD-MM-YYYY HH:MM)")
 
         if st.button("Inserir"):
-            try:
-                datetime.strptime(horario, "%Y-%m-%d %H:%M")
-                View.aula_inserir(vagas, horario, id_esporte, id_professor)
-                st.success("Aula cadastrada com sucesso!")
-                time.sleep(2)
-                st.rerun()
-            except ValueError:
-                st.error("Formato de horário inválido. Use 'YYYY-MM-DD HH:MM'")
-            except Exception as e:
-                st.error(f"Erro: {str(e)}")
-
+                try:
+                    # Validação deve usar o MESMO formato que você pede ao usuário
+                    datetime.strptime(horario, "%d-%m-%Y %H:%M")  # Corrigido para DD-MM-YYYY
+                    View.aula_inserir(vagas, horario, id_esporte, id_professor)
+                    st.success("Aula cadastrada com sucesso!")
+                    time.sleep(2)
+                    st.rerun()
+                except ValueError:
+                    st.error("Formato de horário inválido. Use 'DD-MM-YYYY HH:MM'")  # Mensagem corrigida
+                except Exception as e:
+                    st.error(f"Erro: {str(e)}")
     @classmethod 
     def aula_listar(cls):
         aulas = View.listar_aulas()

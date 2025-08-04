@@ -15,6 +15,7 @@ from templates.vizualizar_historico_alunoUI import HistoricoAulasAlunoUI
 from templates.cancelar_matricula_aula_alunoUI import CancelarMatriculaAulaUI
 from templates.excluir_conta_alunoUI import ExcluirContaAlunoUI
 from templates.homeUI import HomeUI
+from templates.visualizar_historico_aulas_admin import HistoricoAulasADMINUI
 
 
 class IndexUI:
@@ -70,7 +71,7 @@ class IndexUI:
         if op == "Sugestões de aula":
              GerenciarSolicitacoesUI.main()
         if op == "Visualizar histórico de aulas":
-            HistoricoAulasUI.main()
+            HistoricoAulasADMINUI.main()
         if op == "Manter esportes":
             ManterEsporteUI.main()
         if op == "Manter aulas":

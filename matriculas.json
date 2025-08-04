@@ -173,5 +173,19 @@
         "idTurma": 2,
         "dataMatricula": "04-08-2025 06:43",
         "status": "Ativa"
+    },
+    {
+        "id": 26,
+        "idAluno": 6,
+        "idTurma": 2,
+        "dataMatricula": "04-08-2025 13:37",
+        "status": "Cancelada"
+    },
+    {
+        "id": 27,
+        "idAluno": 6,
+        "idTurma": 3,
+        "dataMatricula": "04-08-2025 14:07",
+        "status": "Ativa"
     }
 ]
